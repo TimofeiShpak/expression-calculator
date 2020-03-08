@@ -97,5 +97,3 @@ return result;
 module.exports = {
     expressionCalculator
 }
-
-//throw new Error('ExpressionError: Brackets must be paired');
