@@ -15,6 +15,7 @@ let result = 0;
 let bracketsCheck=0;
 let numberBrackets=0;
 let numberBracketsCheck=0;
+let ChecknumberBrackets = 1;
 for(let i =0; i<(numberBrackets+1); i++){
 let left = 0;
 let right = 0;
@@ -50,14 +51,17 @@ let CheckRightb=0;
 		}
 		arr.splice(indexEnd,1);
 		}
-		left=0;
-		if(i>2){
-			for(let i = 0; i<arr.length; i++){
-				if(arr[i]=='(')left++;
-			}
+			left=0;
+			if(i>2 && ChecknumberBrackets==1){
+				for(let i = 0; i<arr.length; i++){
+					if(arr[i]=='(')left++;
+				}
+			
+			if((numberBrackets-i+1)<left)numberBrackets++;
+			ChecknumberBrackets=0;
 		}
-		if(numberBrackets<(i+left-1))numberBrackets++;
-}
+		}
+
 
 for(let i=0; i<arr.length; i++){
 	if(arr[i]=='('){
